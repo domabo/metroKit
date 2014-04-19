@@ -1,0 +1,8 @@
+@using Domaba.Framework;  @inherits RazorViewBase<customer>
+@{ 
+    // HTML.Theme = "/layouts/master_jquerymobile_metro.vbhtml";
+    Layout = Html.Theme;
+    ViewBag["Title"] = "Customer";
+}
+<p>The customer entered is @Model.id</p> 
+

@@ -1,0 +1,43 @@
+﻿ html {
+            overflow: auto;
+           scrollbar-face-color:rgba(91, 192, 222, 0.8);
+scrollbar-base-color:rgba(91, 192, 222, 0.8);
+scrollbar-arrow-color:rgba(91, 192, 222, 0.8);
+scrollbar-track-color:#F3F3F3;
+scrollbar-shadow-color:rgba(91, 192, 222, 0.8);
+scrollbar-highlight-color:rgba(91, 192, 222, 0.8);
+scrollbar-3dlight-color:rgba(91, 192, 222, 0.8);
+scrollbar-darkshadow-Color:rgba(91, 192, 222, 0.8);
+        }
+   body   {
+position: absolute;
+top: 30px;
+left: 0;
+bottom: 35px;
+right: 9px;
+padding: 0px;
+overflow-y: auto;
+overflow-x: hidden;
+}
+  
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+ ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(91, 192, 222, 0.8);
+    -webkit-box-shadow: inset 0 0 0px rgba(0,0,0,0.5); 
+    height:50px;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(91, 192, 222, 0.4);
+}

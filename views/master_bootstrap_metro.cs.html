@@ -1,0 +1,109 @@
+@using Domaba.Framework;  @inherits RazorViewBase 
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag["Title"]</title>
+    <link rel="stylesheet" type="text/css" href="/static/metro-bootstrap/css/metro-bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/Domaba/css/scrollbars.css">
+        <link rel="stylesheet" type="text/css" href="/static/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/Domaba/fonts/metrosymbol.css">
+    <link rel="stylesheet" type="text/css" href="/static/Domaba/css/additional-icons.css">
+    <link rel="stylesheet" type="text/css" href="/static/Domaba/css/thumbnails.css">
+    <link rel="stylesheet" type="text/css" href="/static/animate/css/animate.min.css" />
+	@if (IsSectionDefined("Styles")) {RenderSection("Styles");}
+   <script type="text/javascript" src="/static/jquery/js/jquery_00.js"></script>
+    <script type="text/javascript" src="/static/Domaba/js/razorsocket.js"></script>
+</head>
+<body>
+    @{RenderSection("PreBody",false);}
+    
+     @if (IsSectionDefined("Absolute")) {RenderSection("Absolute");} 
+      
+     @if (IsSectionDefined("Settings")) {
+                @:<span class="topRow row">
+                        @:<div class="settings-cog">
+                           @:<div class="btn-group">
+                              @:<a class="btn" href="#" onclick='$( "#side-settings" ).toggle(); return false; '>
+                                @:<i class="icon-wrench"></i></a> 
+                           @:</div>
+                        @:</div>
+                        @:<div id="side-settings" class="ui-sidebar-fixed" >
+                            @:<div  class="ui-sidebar-fixed-inner animated fadeInRightBig" >
+                                @:<div class="backButton"><a href="javascript:$( '#side-settings' ).toggle();"><i class="icon-collapse-alt icon-3x"></i></a></div>
+                                @:<h1>settings</h1>
+                                RenderSection("Settings");
+                                @:</div>
+                        @:</div> 
+       }
+        
+        @if (IsSectionDefined("AuthenticatedUser")) 
+        {RenderSection("AuthenticatedUser");} 
+        else {
+        if ((CurrentContext.Request.User != null ) && (CurrentContext.Request.User.Identity.IsAuthenticated)) {
+              @:<div class="settings-user">
+                    @:<div class="btn-group">
+                        @:<a class="btn">@CurrentContext.Request.User.Identity.Name</a>
+                        @:<button class="btn dropdown-toggle" data-toggle="dropdown">
+                            @:<i class="icon-user"></i>
+                        @:</button>
+                        @:<ul class="dropdown-menu">
+                        @:<li><a href="/Account/Login">Account</a></li>
+                        @:<li><a href="/Account/Logout">Sign Out</a></li>
+                        @:</ul>
+                    @:</div>
+                @:</div>
+                } else {
+                 @:<div class="settings-user">
+                    @:<div class="btn-group">
+                        @:<a class="btn" href="/Account/Login">Sign In...</a>
+                        @:<button class="btn">
+                            @:<i class="icon-user"></i>
+                        @:</button>
+                     @:</div>
+                @:</div>
+                }
+           }
+           
+     
+      @if (Html.ShowBackButton) {
+      	@:<div class="backButton"><a href="javascript:window.history.back();"><i class="metro-42pt-back"></i></a></div>
+      }
+      <div class="container" style="padding-left: 75px; padding-right: 30px; margin-left: 0; ">
+            @if (IsSectionDefined("Header")) 
+            {RenderSection("Header");}
+            else {
+              @:<header class="page-header">
+              @:<h1>@this.ViewBag["Title"]</h1>
+              @:</header>
+            }
+        <div class="container animated bounceInLeft ">
+        @{RenderBody();}
+        </div>
+        @if (IsSectionDefined("Footer")) {
+                @:<footer class="ui-footer-fixed label label-info">
+               @RenderSection("Footer")   
+            @:</footer>
+       }
+    </div>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="/static/metroBootstrap/js/bootstrap-tooltip.js"></script>
+    <script type="text/javascript" src="/static/metroBootstrap/js/bootstrap-alert.js"></script>
+    <script type="text/javascript" src="/static/metroBootstrap/js/bootstrap-button.js"></script>
+    <script type="text/javascript" src="/static/metroBootstrap/js/bootstrap-carousel.js"></script>
+    <script type="text/javascript" src="/static/metroBootstrap/js/bootstrap-collapse.js"></script>
+    <script type="text/javascript" src="/static/metroBootstrap/js/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="/static/metroBootstrap/js/bootstrap-modal.js"></script>
+    <script type="text/javascript" src="/static/metroBootstrap/js/bootstrap-popover.js"></script>
+    <script type="text/javascript" src="/static/metroBootstrap/js/bootstrap-scrollspy.js"></script>
+    <script type="text/javascript" src="/static/metroBootstrap/js/bootstrap-tab.js"></script>
+    <script type="text/javascript" src="/static/metroBootstrap/js/bootstrap-transition.js"></script>
+    <script type="text/javascript" src="/static/metroBootstrap/js/bootstrap-typeahead.js"></script>
+    <script type="text/javascript" src="/static/metroBootstrap/js/jquery.validate.js"></script>
+    <script type="text/javascript" src="/static/metroBootstrap/js/jquery.validate.unobtrusive.js"></script>
+    <script type="text/javascript" src="/static/metroBootstrap/js/jquery.unobtrusive-ajax.js"></script>
+    @{RenderSection("PostBody",false);}
+    
+</body>
+</html>

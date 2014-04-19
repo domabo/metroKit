@@ -1,0 +1,124 @@
+
+
+.thumbnails > li.tile h3,
+.thumbnails > li.tile h4 {
+  margin-top: -5px;
+  line-height:1;
+}
+
+.textlinkActive, .textlinkNotActive {
+   font-family: "Segoe UI Light", "Helvetica Neue", "Segoe UI", "Segoe WP", sans-serif;
+   text-rendering: optimizelegibility;
+    text-decoration: none;
+    text-align:center;
+           color: grey;
+           line-height:1;
+  }
+
+.textlinkActive {
+  font-size: 12px;
+   font-weight: 700;
+   }
+    .textlinkActive > a, .textlinkNotActive > a {
+        color: grey;
+    }
+
+.textlinkNotActive {
+  font-size: 12px;
+   font-weight: 200;
+     }
+
+.textLeft {
+             line-height:1;
+ 
+   font-family: "Segoe UI Light", "Helvetica Neue", "Segoe UI", "Segoe WP", sans-serif;
+   text-rendering: optimizelegibility;
+    text-decoration: none;
+    text-align:left;
+           color: grey;
+           padding-left: 3px;
+            font-size: 10px;
+   font-weight: 200;
+ 
+  }
+
+
+.tile-title {
+     margin: 12.5px 0;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Segoe UI Light", "Segoe WP", sans-serif;
+  font-weight: 300;
+  line-height: 1;
+  color: white;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+   font-size: 24px;
+}
+
+.tile-icon {
+    float:left;
+    padding-left: 15px;
+    padding-right:10px;
+}
+
+.header-righticon {
+    float:right;
+    padding-left: 10px;
+    padding-right:0;
+  padding-top: 45px;
+}
+
+.tile-footer {
+    clear:both;
+    bottom:0;
+    left:15px;
+    position:absolute;
+      margin: 12.5px 0;
+  font-family: "Segoe UI Light", "Helvetica Neue", "Segoe UI", "Segoe WP", sans-serif;
+  font-weight: 200;
+  line-height: 1;
+  color: white;
+  text-rendering: optimizelegibility;
+   font-size: 14px;
+}
+
+.tile-badge {
+    clear:both;
+    top:0;
+    left:7px;
+    position:absolute;
+      margin: 12.5px 0;
+  font-family: "Segoe UI Light", "Helvetica Neue", "Segoe UI", "Segoe WP", sans-serif;
+  font-weight: 200;
+  line-height: 1;
+  color: white;
+  text-rendering: optimizelegibility;
+   font-size: 14px;
+}
+.thumbnails > li.tile.tile-black {
+  background-color: #000000;
+}
+
+.thumbnails > li.tile {
+  display: block;
+  cursor: pointer;
+  float: left;
+  height: 90px;
+  text-align: left;
+  width: 200px;
+  padding: 5px;
+  opacity: 0.75;
+  background-color: #2e8bcc;
+  position: relative;
+}
+
+.thumbnails > li.tile a:hover {
+  text-decoration: none;
+}
+.thumbnails > li.tile img {
+  border: 0;
+}
+.thumbnails > li.tile:hover {
+  opacity: 1;
+}
+
+       .topRow{top:0;left:0;right:0;position:fixed;z-index:1000}

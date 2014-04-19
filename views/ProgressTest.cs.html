@@ -1,0 +1,26 @@
+@using Domaba.Framework;  @inherits RazorViewBase 
+@{  
+    Layout = Html.Theme;
+    ViewBag["Title"] = "Analyzing Disc ";
+}
+<div style="height:100px"></div>
+<p>Analyzing</p>
+<div style="height:80px"></div>
+
+<div style="height: 100px;"></div>
+<div class="progress progress-striped ">
+   <div id="ProgressBar#ProgressTest" style="width: 0%; " class="bar "></div>
+</div>
+
+
+@section Footer {
+             <div id="StatusMsg#ProgressTest">Status Message</div>    
+}
+<div class="ui-grid-b">
+<div class="ui-block-a"></div><div class="ui-block-b"></div>
+  <div class="ui-block-c"> <a data-role="button" data-ajax="false" href="javascript: RazorMessageSocket.doCancel('#ProgressTest');" data-theme="c">Cancel</a></div> 
+</div> 
+ 
+<script type="text/javascript">
+     RazorMessageSocket.init("@Url.WebSocketHost()/subscribe?id=domat", "#ProgressTest");
+</script>

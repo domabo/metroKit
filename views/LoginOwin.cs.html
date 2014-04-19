@@ -1,0 +1,61 @@
+@using Domaba.Framework;
+@using Domaba.Owin;
+@inherits RazorViewBase<loginModel>
+@{  
+    Html.Theme = "/layouts/master_bootstrap_metro.cshtml"; 
+    Layout = Html.Theme;
+    ViewBag["Title"] = "sign in"; 
+    Html.ThemeType = HtmlThemeTypes.bootstrap;
+    Html.ShowBackButton = true;
+    string returnUrl = this.Model.url;
+}  
+@section AuthenticatedUser{}
+       <form class="form-inline" method="POST" action="@CurrentContext.ApiController.GetActionUrl("MainController.AccountLoginExternal", returnUrl)">
+       <fieldset>
+        <label>Please choose one of the following methods to sign in</label>
+        <div class="controls controls-row">
+        <br />
+             @foreach (var p in CurrentContext.Request.GetExternalAuthenticationTypes())
+            {
+              var str = new StringBuilder();
+              str.Append("<button class=\"btn btn-large btn-primary\" ");
+              str.Append("type=\"submit\" ");
+              str.Append("id=\"" + p.AuthenticationType + "\" ");
+              str.Append("name=\"provider\"");
+              str.Append("value=\"" + p.AuthenticationType + "\" ");
+              str.Append("title=\"Sign in using your " + p.Caption + " account\" ");
+              str.Append(">");
+              str.Append("<i class=\"icon-google-plus icon-large icon-white\"></i>&nbsp;");
+              str.Append(p.AuthenticationType);
+              str.Append("</button>&nbsp;&nbsp;&nbsp;");
+              
+                 str.Append("<button class=\"btn btn-large btn-primary\" ");
+              str.Append("type=\"submit\" ");
+              str.Append("id=\"" + "Facebook" + "\" ");
+              str.Append("name=\"provider\"");
+              str.Append("value=\"" + "Facebook" + "\" ");
+              str.Append("title=\"Log in using your " + "Facebook" + " account\" ");
+              str.Append(">");
+              str.Append("<i class=\"icon-facebook icon-large icon-white\"></i>&nbsp;");
+              str.Append("Facebook");
+               str.Append("</button>&nbsp;&nbsp;&nbsp;");
+         
+            
+                    str.Append("<button class=\"btn btn-large btn-primary\" ");
+              str.Append("type=\"submit\" ");
+              str.Append("id=\"" + "Twitter" + "\" ");
+              str.Append("name=\"provider\"");
+              str.Append("value=\"" + "Twitter" + "\" ");
+              str.Append("title=\"Log in using your " + "Twitter" + " account\" ");
+              str.Append(">");
+              str.Append("<i class=\"icon-twitter icon-large icon-white\"></i>&nbsp;");
+              str.Append("Twitter");
+              str.Append("</button>&nbsp;&nbsp;&nbsp;");
+         
+           
+       
+               WriteLiteral(str.ToString());   
+            }
+            </div>
+        </fieldset>
+    </form>

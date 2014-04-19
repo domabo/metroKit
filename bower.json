@@ -1,0 +1,10 @@
+{
+    "name": "metroKit",
+    "description": "Demonstration app for OWIN/JS and the cross platform nodeAppKit native web framework.  It runs under both node.js and as a native application on OS/X with no changes.",
+    "author": "OwinJS",
+    "version": "0.1.0",
+    "ignore": ["*.md", "package.json", ".bowerrc", "bower.json"],
+    "dependencies": {
+          "metro-bootstrap": "OwinJS-lib/metro-bootstrap"
+     }  
+}

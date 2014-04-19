@@ -1,0 +1,70 @@
+@using Domaba.Framework;  @inherits RazorViewBase 
+<!DOCTYPE html>   
+ <html>
+    <head>
+                 <meta http-equiv="X-UA-Compatible" content="IE=10" />
+        <title>My Page</title> 
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+    <script type="text/javascript" src="/web/static/jquery/js/jquery_00.js"></script>
+    <script type="text/javascript" src="/web/static/Domaba/js/razorsocket.js"></script>
+<script  type="text/javascript">
+   window.api.log("TEST STARTED");
+    var wsUri = "@Url.WebSocketHost()/subscribe/sockettest";
+    var testPageId = "#SocketTest"
+    var output;
+       
+    function init() {
+        output = document.getElementById("output");
+        testWebSocket(); 
+    }
+
+    function testWebSocket() {
+        msgSocket = new RazorSocket(wsUri, testPageId);
+        OpenRazorMessageSocketsByTag[testPageId] = msgSocket;
+        msgSocket.onopen = function (evt) { onOpen(evt) };
+        msgSocket.onclose = function (evt) { onClose(evt) };
+        msgSocket.onmessage = function (evt) { onMessage(evt) };
+        msgSocket.onerror = function (evt) { onError(evt) };
+            }
+
+    function onOpen() {
+        writeToScreen("CONNECTED");
+        doSend("WebSocket rocks");
+    }
+
+    function onClose() { 
+        writeToScreen("DISCONNECTED"); 
+        msgSocket = null;
+    }
+
+    function onMessage(evt) {
+        writeToScreen('<span style="color: blue;">RESPONSE: ' + evt.data + '</span>');
+        if (evt.data == "it certainly does rock") {
+           msgSocket.close();
+         }
+
+      }
+
+    function onError(evt) {
+  //      writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
+    }
+
+    function doSend(message) {
+        writeToScreen("SENT: " + message);
+        msgSocket.send(message);
+   }
+
+    function writeToScreen(message) {
+        var pre = document.createElement("p"); pre.style.wordWrap = "break-word";
+        pre.innerHTML = message; output.appendChild(pre);
+    }
+
+    window.addEventListener("load", init, false); 
+        </script>
+</head> 
+<body>
+    <h2>RazorSocket Test</h2> 
+   <div id="output"></div>
+                        
+</body>
+</html>

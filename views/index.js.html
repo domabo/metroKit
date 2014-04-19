@@ -1,0 +1,44 @@
+@{
+    layout = "layout.js.html";
+    viewBag.title = "nodeAppKit Demonstration App";
+    //Html.ShowBackButton = false;
+}
+
+@section header(){
+  <header class="page-header">
+    <div class="inner">
+ 
+        <h1>metro-bootstrap</h1>
+        <div><ul class="nav nav-pills">
+                        <li class="active">  <a href="/">Overview</a> </li>
+                        <li><a href="/views/css/index.html">Base CSS</a> </li>
+                        <li><a href="/views/components/index.html">Components</a> </li>
+                         <li><a href="/views/components/metro.html">Metro Comonents</a> </li>
+    
+    </ul></div>
+        <p class="download-info">
+            <a href="https://github.com/TalksLab/metro-bootstrap" class="btn btn-primary btn-lg">View project on GitHub</a>
+        </p>
+
+        <div class="bs-links2">
+            <ul class="quick-links">
+            <li><a href="http://talkslab.com/blog">Read our blog</a></li>
+            <li><a href="https://github.com/TalksLab/metro-bootstrap/issues">Submit issues</a></li>
+            <li><a href="https://github.com/TalksLab/metro-bootstrap/wiki">Roadmap and changelog</a></li>
+            </ul>    
+        </div>
+    <div> 
+</header>
+}
+
+<a data-ajax="false" href="ViewCustomer.cshtml?id=hello">Click for customer</a>
+<a data-ajax="false" data-role="button" href="ProgressTest.cshtml">Click for ProgressBar test</a>
+<a data-ajax="false" data-role="button" href="/google">Click for httpClient test</a>
+<a data-ajax="false" data-role="button" href="Search.cshtml">Click for Search test</a>
+<a data-ajax="false" data-role="button" href="javascript: window.api.print();">Click for Print Local test</a>
+<a data-ajax="false" data-role="button" href="RazorSocketTest.cshtml">Click for RazorSocket test</a>
+<a data-ajax="false" data-role="button" href="Index_jquerymobile.cshtml">Click for Jquery Mobile test</a>
+
+@section footer(){
+@:Created by domaba eXtended Web Services for Devices
+}

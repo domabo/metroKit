@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'metro_symbolregular';
+    src: url('metrosymbol-regular-webfont.eot');
+    src: url('metrosymbol-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('metrosymbol-regular-webfont.woff') format('woff'),
+         url('metrosymbol-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+[class^="metro-"],
+[class*=" metro-"] {
+  font-family: metro_symbolregular;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  -webkit-font-smoothing: antialiased;
+ display: inline;
+  width: auto;
+  height: auto;
+  line-height: normal;
+  vertical-align: baseline;
+  background-image: none;
+  background-position: 0% 0%;
+  background-repeat: repeat;
+  margin-top: 0;
+}
+
+
+[class^="metro-42pt-"],
+[class*=" metro-42pt"] {
+font-size: 42pt;
+}
+
+[class^="metro-20pt-"],
+[class*=" metro-20pt-"] {
+font-size: 20pt;
+}
+
+.metro-42pt-back:before         { content: "\e071"; }
+.metro-20pt-back:before         { content: "\e0ba"; }
+

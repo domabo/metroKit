@@ -1,0 +1,36 @@
+@{ 
+layout = null; 
+}
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@viewBag.title</title>
+    <link rel="stylesheet" href="/lib/metro-bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/lib/metro-bootstrap/css/metro-bootstrap.min.css">
+     <script type="text/javascript" src="/lib/metro-bootstrap/js/jquery-1.8.0.min.js" ></script>
+     <script type="text/javascript" src="/lib/metro-bootstrap/js/bootstrap.min.js" ></script>
+ 
+    <link rel="stylesheet" type="text/css" href="/css/scrollbars.css">
+    <link rel="stylesheet" type="text/css" href="/fonts/metrosymbol.css">
+    <link rel="stylesheet" type="text/css" href="/css/additional-icons.css">
+    <link rel="stylesheet" type="text/css" href="/css/thumbnails.css">
+    <link rel="stylesheet" type="text/css" href="/css/animate.min.css" />
+   <script type="text/javascript" src="/js/razorsocket.js"></script>
+</head>
+<body>
+      	<div class="backButton"><a href="javascript:window.history.back();"><i class="metro-42pt-back"></i></a></div>
+      
+      <div class="container" style="padding-left: 75px; padding-right: 30px; margin-left: 0; ">
+        @this.renderSection("header")
+      
+        <div class="container animated bounceInLeft ">
+        @this.renderBody()
+        </div>
+         <footer class="ui-footer-fixed label label-info">
+         @this.renderSection("footer")
+         </footer>
+       </div>   
+</body>
+</html>

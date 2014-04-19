@@ -1,0 +1,51 @@
+{
+  "name": "metroKit",
+  "main": "index.js",
+  "node-main": "",
+  "node-baseurl": "node://localhost/",
+  "node-splashtime": -1,
+  "description": "Demonstration Metro app for OWIN/JS and the cross platform nodeAppKit native web framework.  It runs under both node.js and as a native application on OS/X with no changes.",
+  "author": "OwinJS",
+  "version": "0.1.5",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OwinJS/metroKit.git"
+  },
+  "dependencies": {
+    "owinjs-razor": "*",
+    "owinjs-static": "*",
+    "owinjs-router": "*",
+    "owinjs": "*",
+    "promise": "*"
+  },
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-bower": "*",
+    "gulp-bower-files": "*",
+    "gulp-clean": "*",
+    "gulp-less": "^1.2.3",
+    "gulp-minify-css": "^0.3.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^0.2.1"
+  },
+  "keywords": [
+    "owinjs",
+    "middleware",
+    "app",
+    "demo",
+    "mac",
+    "osx",
+    "promise",
+    "async",
+    "framework",
+    "owin"
+  ],
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "window": {
+    "title": "Demo for nodeAppKit and OWIN/JS",
+    "width": 1024,
+    "height": 600
+  }
+}

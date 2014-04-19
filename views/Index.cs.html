@@ -1,0 +1,49 @@
+@using Domaba.Framework;  @inherits RazorViewBase 
+@{
+   // Html.Theme = "/base/layouts/master_jquerymobile_metro.cshtml";
+    Html.Theme = "/base/layouts/master_bootstrap_metro.cshtml"; 
+    Layout = Html.Theme;
+     ViewBag["Title"] = "Domaba Razor Web Engine";
+    Html.ThemeType = HtmlThemeTypes.bootstrap;
+   Html.ShowBackButton = false;
+}
+ 
+@section Header {
+    <header class="page-header">
+    <div class="inner">
+ 
+        <h1>metro-bootstrap</h1>
+        @Html.Partial("/web/views/bootstrap_metro/_navbar.cshtml")
+        <p class="download-info">
+            <a href="https://github.com/TalksLab/metro-bootstrap" class="btn btn-primary btn-large">View project on GitHub</a>
+        </p>
+
+        <div class="bs-links2">
+            <ul class="quick-links">
+            <li><a href="http://talkslab.com/blog">Read our blog</a></li>
+            <li><a href="https://github.com/TalksLab/metro-bootstrap/issues">Submit issues</a></li>
+            <li><a href="https://github.com/TalksLab/metro-bootstrap/wiki">Roadmap and changelog</a></li>
+            </ul>    
+        </div>
+    <div> 
+</header>
+}
+           
+@section Footer  {    
+  Created by domaba eXtended Web Services for Devices  
+}
+
+@Html.ButtonAction("Hi. I am a simple button.", "MainController.GetCustomer", new customer() {id = "domaba", test="dog", banana="hello"}, "btn-primary")
+@Html.ButtonAction("Hey! Look, I am a settings kind'a button.", "MainController.GetCustomer", new customer() {id = "domaba", test="dog", banana="hello"}, ButtonIcon.star)
+<a data-ajax="false" href="ViewCustomer.cshtml?id=hello">Click for customer</a>
+<a data-ajax="false" data-role="button" href="ProgressTest.cshtml">Click for ProgressBar test</a>
+<a data-ajax="false" data-role="button" href="/google">Click for httpClient test</a>
+<a data-ajax="false" data-role="button" href="Search.cshtml">Click for Search test</a>
+<a data-ajax="false" data-role="button" href="javascript: window.api.print();">Click for Print Local test</a>
+<a data-ajax="false" data-role="button" href='@Url.ApiCreatePDF("razor://localhost/web/index.html")'>Click for PDF test</a>
+<a data-ajax="false" data-role="button" href='@Url.ApiPrint("http://www.google.com")'>Click for Print test 2</a>
+<a data-ajax="false" data-role="button" href='@Url.ApiPrintDialog("http://www.google.com")'>Click for ApiPrintDialog test 2</a>
+<a data-ajax="false" data-role="button" href='@Url.ApiCreatePDFPaginated("http://www.msn.com")'>Click for PDF Paginated test 2</a>
+<a data-ajax="false" data-role="button" href="RazorSocketTest.cshtml">Click for RazorSocket test</a>
+<a data-ajax="false" data-role="button" href="Index_jquerymobile.cshtml">Click for Jquery Mobile test</a>
+

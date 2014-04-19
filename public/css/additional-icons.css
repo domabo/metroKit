@@ -1,0 +1,127 @@
+﻿html, html a {
+    -webkit-font-smoothing: antialiased;
+ }
+
+.nav {
+    margin-left: 0;
+    margin-bottom: 25px;
+    list-style: none
+}
+
+.nav>li>a {
+    display: block;
+    padding: 8px 12px;
+    margin: 2px;
+    line-height: 14px;
+    color: #00aba9; 
+}
+
+.nav-pills>li.active>a, .nav-pills>.active>a, .nav-pills>.active>a:hover {
+    color: #fff;
+    background-color: #00aba9
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+    text-transform: lowercase;
+    text-rendering: optimizelegibility;
+}
+
+.page-header {
+    padding-bottom: 11.5px;
+    margin: 25px 0 37.5px;
+    border-bottom: 1px solid #eee
+}
+
+.btn-lg {
+    padding: 20px;
+       font-size: 17.5px;
+}
+
+.btn-lg [class^="icon-"], .btn-lg [class*=" icon-"] {
+    margin-top: 4px
+}
+
+.label, .badge {
+    line-height: 20px;
+text-shadow: none;
+padding-bottom: 5px;
+padding-left: 10px;
+padding-right: 10px;
+padding-top: 5px;
+text-align: left;
+font-size: 12px;
+
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", "Segoe WP", "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    line-height: 25px;
+    color: #333;
+    background-color: #fff
+}
+
+h1, h2, h3 {
+    line-height: 50px
+}
+
+
+h1 {
+    font-size: 56px
+}
+
+h2 {
+    font-size: 42px
+}
+
+h3 {
+    font-size: 28px
+}
+
+ul {
+    list-style: square
+}
+
+.backButton {
+    overflow: visible;
+    z-index: 2;
+    padding:0;
+     top: 25px;
+        left:15px;
+     position:absolute;
+}
+
+.backButton > a:link, .backButton > a:visited { color: #666;  text-decoration: none}
+.backButton > a:hover, .backButton > a:active  { color: #333;  text-decoration: none};
+
+.hide {
+   display: none;
+}
+
+.ui-header-fixed,.ui-footer-fixed{left:0;right:0;width:100%;position:fixed;z-index:1000}
+.ui-header-fixed{top:0}
+.ui-footer-fixed{bottom:0}
+.ui-sidebar-fixed{top:0;bottom:0;right:0; display:none; position:fixed;z-index:1000; padding:0;}
+.ui-sidebar-fixed-inner {  width  : 150px;
+  height: 100%;
+  float  : right;
+  position : relative;
+  left: 0px;
+  top:0;
+  bottom:0;
+  padding-top: 20px;
+    padding-left: 70px;
+    padding-right: 65px;
+    background-color: #eee;
+  }
+  .ui-sidebar-fixed-inner a:hover{  font-size: 1.2em;}
+ .nav-list a:hover{  padding-left: 5px;}
+
+
+
+.settings-cog{top:0;right:30px;position:fixed;z-index:1000}
+.settings-user{top:0;right:100px;position:fixed;z-index:900; }
